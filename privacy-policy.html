@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - AuraWall AI</title>
+    <style>
+        :root {
+            --primary: #00f5d4;
+            --primary-dark: #0891b2;
+            --text: #1e293b;
+            --text-muted: #64748b;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.65;
+            color: var(--text);
+            background-color: var(--bg);
+            margin: 0;
+            padding: 24px 16px;
+        }
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border);
+        }
+        h1 {
+            color: #0f172a;
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+        .meta {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 28px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+        h2 {
+            color: #0f172a;
+            font-size: 1.35rem;
+            margin-top: 32px;
+            margin-bottom: 12px;
+        }
+        h3 {
+            font-size: 1.1rem;
+            color: var(--primary-dark);
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+        p, li {
+            font-size: 1rem;
+            color: #334155;
+        }
+        ul {
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight-box {
+            background-color: #f0fdfa;
+            border-left: 4px solid var(--primary-dark);
+            padding: 14px 18px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+        .highlight-box p {
+            margin: 0;
+            color: #0f766e;
+            font-weight: 500;
+        }
+        code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: #0f172a;
+        }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Privacy Policy</h1>
+        <div class="meta">
+            <strong>Application:</strong> AuraWall AI (<code>com.aurawall.aura_wallpapers</code>) &bull;
+            <strong>Effective Date:</strong> October 22, 2026 &bull;
+            <strong>Last Updated:</strong> October 22, 2026
+        </div>
+
+        <p>Welcome to <strong>AuraWall AI</strong> ("we", "our", or "us"). We are committed to protecting your privacy and ensuring full transparency regarding how information is handled when you use our mobile application on Android and iOS.</p>
+
+        <h2>1. Information We Collect and Process</h2>
+
+        <h3>A. No Personal Data Collection</h3>
+        <p>AuraWall AI does not require account registration and does not collect, sell, rent, or transmit your full name, email address, phone number, address book contacts, or geographic location to any external server.</p>
+
+        <div class="highlight-box">
+            <p>&check; Zero Tracking &amp; Zero Account Requirement: All wallpaper customization, 4D Parallax rendering, and Quick Studio Editor filters run 100% locally on your device.</p>
+        </div>
+
+        <h3>B. Local On-Device Storage</h3>
+        <p>The Application stores your customization preferences strictly on your local device via standard platform preferences (<code>SharedPreferences</code> on Android / <code>NSUserDefaults</code> on iOS):</p>
+        <ul>
+            <li>Saved Favorites queue (<code>aurawall_favorite_ids_v1</code>)</li>
+            <li>Smart Auto-Wallpaper Scheduler configuration (<code>aurawall_auto_enabled_v1</code>, interval hours, source pool, target screen, and last UTC sync timestamp)</li>
+            <li>Cached wallpaper catalog metadata (<code>aurawall_cached_catalog_json_v3_thumbs</code>)</li>
+            <li>Local artwork feedback/report logs (<code>aurawall_reported_items_v1</code>)</li>
+        </ul>
+
+        <h3>C. Device Motion Sensors (120Hz Gyroscope &amp; Accelerometer)</h3>
+        <p>To render interactive 4-layer 3D/4D Parallax depth effects, the Application reads real-time gyroscope and accelerometer sensor events in memory while the preview or live wallpaper is visible. Sensor data is never recorded, stored, or transmitted off your device.</p>
+
+        <h2>2. Device Permissions &amp; Media Storage</h2>
+        <ul>
+            <li><strong>Android (Android 10+ / API 29+):</strong> Uses system <code>WallpaperManager</code>, <code>WallpaperService</code>, <code>JobScheduler</code>, and write-only scoped <code>MediaStore</code> (saving exported 4K wallpapers to <code>Pictures/AuraWall</code>) without requesting <code>READ_MEDIA_IMAGES</code> or <code>WRITE_EXTERNAL_STORAGE</code> permissions.</li>
+            <li><strong>iOS (iOS 14.0+):</strong> Requests write-only Photo Library access (<code>PHPhotoLibrary.requestAuthorization(for: .addOnly)</code> via <code>NSPhotoLibraryAddUsageDescription</code>) solely to save exported 4K UHD wallpapers into your Photo Library without reading your personal photos. Because iOS does not provide a public API for third-party apps to silently change the system wallpaper, saved images on iOS can be applied via <strong>iOS Settings &gt; Wallpaper</strong>.</li>
+        </ul>
+
+        <h2>3. Data Retention &amp; User Deletion Rights</h2>
+        <p>All user preferences and favorite queues remain strictly on your device until you reset or remove them. You can delete your local data at any time using either method below:</p>
+        <ul>
+            <li><strong>In-App Instant Reset:</strong> Open <strong>AuraWall AI</strong> &rarr; tap the <strong>Settings (Gear)</strong> icon &rarr; open <strong>Privacy Policy, Terms &amp; Artwork License</strong> &rarr; tap <strong>Clear Local App Data</strong> to immediately reset your Favorites queue and Auto-Changer schedule.</li>
+            <li><strong>Full Removal:</strong> Uninstalling the application (or clearing storage in OS Settings) permanently erases all local preferences, cached metadata, and report logs from your device.</li>
+        </ul>
+
+        <h2>4. Curated AI Artwork Provenance (C2PA / JUMBF) &amp; Reporting</h2>
+        <p>All 40 4K UHD wallpapers (<code>2160 &times; 3840</code>) and 18 multi-layer parallax assets bundled in AuraWall AI are pre-generated, human-curated AI artworks owned by AuraWall Studio and embedded with ISO 19566-5 JUMBF (<code>c2pa.claim</code>) SHA-256 provenance manifests. Users can inspect C2PA provenance metadata and report any artwork directly inside the app via the <strong>C2PA AI Provenance &amp; Report</strong> dialog.</p>
+
+        <h2>5. Children's Privacy</h2>
+        <p>AuraWall AI is a general-audience personalization utility and does not knowingly solicit or collect personal information from children under the age of 13.</p>
+
+        <h2>6. Contact Us</h2>
+        <p>If you have questions, privacy inquiries, or copyright/DMCA requests regarding AuraWall AI, please contact:</p>
+        <ul>
+            <li><strong>Developer:</strong> AuraWall Studio (Pham Hong Thai / LynkKid)</li>
+            <li><strong>Support &amp; Privacy Email:</strong> <code>lynk.kid.gappmota@gmail.com</code> / <code>lynk.kid.hva@gmail.com</code></li>
+        </ul>
+
+        <footer>
+            &copy; 2026 AuraWall AI. All rights reserved.
+        </footer>
+    </div>
+</body>
+</html>
